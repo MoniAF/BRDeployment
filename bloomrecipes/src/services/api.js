@@ -1,12 +1,13 @@
 import axios from 'axios'
 
-export const BACKEND_URL =
+const API_URL =
   import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api'
 
+export const BACKEND_URL = API_URL.replace(/\/api\/?$/, '')
 export const AUTH_TOKEN_KEY = 'bloom_token'
 
 const api = axios.create({
-  baseURL: `${BACKEND_URL}/`,
+  baseURL: `${API_URL}/`,
   timeout: 15000,
   headers: {
     Accept: 'application/json',
