@@ -54,4 +54,4 @@ RUN mkdir -p \
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD ["sh", "-c", "cp /etc/secrets/ca.pem /tmp/ca.pem && chmod 644 /tmp/ca.pem && apache2-foreground"]
