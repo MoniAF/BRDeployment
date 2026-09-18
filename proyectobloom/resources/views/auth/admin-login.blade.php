@@ -13,7 +13,7 @@
                         Sign in to manage recipes
                     </p>
 
-                    <form method="POST" action="{{ route('admin.login.submit') }}">
+                    <form method="POST" action="{{ route('admin.login.submit', [], false) }}">
                         @csrf
 
                         <div class="mb-3">
